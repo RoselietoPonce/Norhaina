@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter Envelope ❤️</title>
+    <a href="index.html" class="heart-link">❤️</a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+        }
+
+        /* Envelope Container */
+        .envelope-container {
+            position: relative;
+            width: 450px; /* Increased width */
+            height: 400px; /* Increased height */
+            cursor: pointer;
+            perspective: 800px;
+        }
+
+        /* Envelope */
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #d32f2f, #e53935);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Flap */
+        .flap {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(145deg, #b71c1c, #c62828);
+            top: 0;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Letter */
+        .letter {
+            position: absolute;
+            width: 85%;
+            height: 95%;
+            background: #fff;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1);
+            transition: top 0.5s ease-in-out;
+            text-align: center;
+            font-size: 12px; /* Increased font size */
+        }
+
+        /* Letter Text */
+        .letter p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Heart Animation */
+        .heart {
+            font-size: 18px; /* Bigger heart */
+            color: #d32f2f;
+            margin-top: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* Opening Animation */
+        .envelope-container.open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .envelope-container.open .letter {
+            top: 10%;
+        }
+
+        /* Heartbeat Animation */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Button Styling */
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff5f6d;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background: #d32f2f;
+        }
+
+        .heart-link {
+            position: fixed;
+            top: 20px;
+            left: 20px; /* Change to 'right: 20px;' if you want it on the right */
+            font-size: 32px; /* Bigger heart */
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .heart-link:hover {
+            transform: scale(1.2); /* Slight zoom on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope-container" onclick="openLetter()">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="letter">
+                <p> Hi mang</p>
+                <p>Happy valentine's day mang! I just want you to know how much I love you. You make my life better in every way. Your love completes me in ways I never knew were possible, and I'm so thankful to have you by my side for almost 6 years.</p>
+                <p>I will always cherish and suport you, no matter what. You mean the world to me.</p>
+                <p>I love you so much. 💖</p>
+                <div class="heart">❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.querySelector('.envelope-container').classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

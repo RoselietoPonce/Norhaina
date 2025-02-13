@@ -1,0 +1,182 @@
+/* 🌸 General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  text-align: center;
+}
+
+/* 💌 Card Design */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on the card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff3366;
+  margin-bottom: 1rem;
+}
+
+/* 🐱 Image Styling */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.image-1,
+.image-2 {
+  width: 150px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.image-2 {
+  width: 180px;
+}
+
+.hide {
+  display: none;
+}
+
+/* 🎀 Buttons */
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;  /* Ensures buttons don't overlap */
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;  /* Prevents them from stretching too much */
+  margin-inline: auto;
+  position: relative;
+}
+
+.btn {
+  flex: 1; /* Allows buttons to evenly distribute space */
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* 💖 Yes Button */
+.btn-yes {
+  background: #ff6699;
+  color: white;
+  box-shadow: 0 3px 10px rgba(255, 105, 135, 0.3);
+}
+
+.btn-yes:hover {
+  background: #ff3366;
+  transform: scale(1.1);
+}
+
+/* 💔 No Button */
+.btn-no {
+  background: white;
+  color: #ff3366;
+  border: 2px solid #ff3366;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease-in-out;
+  position: relative; /* Removes absolute positioning */
+}
+
+/* No Button moves away when hovered */
+.btn-no:hover {
+  background: #ffdde1;
+  transform: translateX(20px); /* Slight move instead of absolute positioning */
+}
+
+.btn-letter {
+  background: #ff6699;
+  color: white;
+  box-shadow: 0 3px 10px rgba(255, 105, 135, 0.3);
+  text-decoration: none;
+}
+
+.btn-letter:hover {
+  background: #ff3366;
+  transform: scale(1.1);
+}
+
+
+/* 💕 Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.card {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* 💖 Cute Confetti Hearts */
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #ff3366;
+  opacity: 1;
+  border-radius: 50%;
+  animation: confetti-fall 2s linear infinite;
+}
+
+.heart-link {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* Change to 'right: 20px;' if you want it on the right */
+  font-size: 32px; /* Bigger heart */
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.heart-link:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 500px) {
+  .button-container {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+      gap: 12px; /* Reduce spacing */
+  }
+
+  .button {
+      width: 80%; /* Make buttons wider for better tap experience */
+      font-size: 16px;
+  }
